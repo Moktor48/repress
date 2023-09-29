@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script type="text/javascript" src="script.js"></script>
+    <title>Administration Page</title>
+</head>
+<body>
+<script>
+
+let boxArray = [];
+
+const boxLoop = (rowAdd) => {
+    boxArray.push('<tr>');
+    for (let i = 0 + rowAdd; i < 7+ rowAdd; i++) {
+    boxArray.push('<td id="' + i + '"></td>');
+    };
+    boxArray.push('</tr>');
+    return boxArray;
+};
+
+const fullBox = () => {
+    for (let i = 0; i < 42; i + 7) {
+    boxLoop(i);
+    }; 
+    return boxArray;
+};
+
+</script>
+<!--
+    This should contain the calendar, a task list, data entry for tasks, 
+    a means to change passwords, permissions, etc
+-->    
+<!-- Create a React component that builds my calendar 
+-->
+
+<div id="react_calendar">
+
+</div>
+    <div id="calendar">
+        <table>
+            <tr>
+                <th>Month</th>
+            </tr>
+            <tr>
+                <th>Days of the week</th>
+            </tr>
+            <div>
+            <tr>
+                <td>Rows of empty data</td>
+            </tr>
+            </div>
+            <!-- End state will be 7 columns, 6 rows -->
+        </table>
+    </div>
+    <div id="task_list">
+        <!-- This will pull from the DB and list the daily tasks-->
+        <h1>Task List for Thursday, September 28</h1>
+        <div id="ran_gen">
+            <table>
+                <tr>
+                    <th class="col_1">Task</th>
+                    <th class="col_2">Due</th>
+
+                </tr>
+                <tr>
+                    <td>This is the task that you must complete today</td>
+                    <td>September 29 by 2000</td>
+                </tr>
+            </table>
+            <label for="complete_check" class="check_label">Complete</label>
+            <input type="checkbox" id="complete_check">
+            
+        </div>
+        
+    </div>
+    <div id="data_entry">
+        <!-- This will allow admin to enter tasks for specific people -->
+        <h1>Task Manager</h1>
+        <form>
+            <label for="login_name">User Name</label>
+            <input type="text" id="login_name">
+            <label for="task_entry">Task</label>
+            <input type="text" id="task_entry">
+            <label for="task_time">Time Due</label>
+            <input type="datetime" id="task_time">
+        </form>
+    </div>
+    <div id="manager">
+        <!-- This will allow basic account management tasks like adding, deleting, or modifying accounts-->
+        <h1>Account Manager</h1>
+        <form>
+            <!-- Should modify or create User name, manager permission, password -->
+            <label for="user_name_entry">User Name</label>
+            <input type="text" id="user_name_entry">
+            <label for="permissions_set">Manager?</label>
+            <input type="checkbox" id="permissions_set">
+            <label for="password_mod">Password</label>
+            <input type="text" id="password_mod">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+* {
+    background-color: black;
+    color: yellow;
+}
+
+form {
+    display: block;
+}
+
+label {
+    display: block;
+}
+
+/*#task_label {
+    float: left;
+    width: 10em;
+    margin-right: 15px;
+    }
+*/
+#data_entry {
+    display: block;
+}
+
+.container {
+    display: flex;
+
+}
+
+th {
+    outline: 2px solid white;
+    text-align: left;
+}
+
+td {
+    outline: 2px solid white;
+}
+
+.col_1 {
+    width: 400px;
+}
+
+.col_2 {
+    width: 200px;
+}
+
+.float {
+    float: right;
+}
